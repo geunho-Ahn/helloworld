@@ -114,30 +114,30 @@ export default function App() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-hanwha-orange rounded-lg flex items-center justify-center">
               <FileSpreadsheet className="text-white w-6 h-6" />
             </div>
             <div>
-              <h1 className="font-bold text-lg leading-tight">LS 부품 데이터 분석기</h1>
-              <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">AI-Powered Data Processor</p>
+              <h1 className="font-bold text-xl tracking-tight text-hanwha-dark">LS 부품 데이터 분석기</h1>
+              <p className="text-[10px] text-hanwha-orange font-bold tracking-[0.2em] uppercase">Aerospace Data Intelligence</p>
             </div>
           </div>
 
           {analysis && (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <button 
                 onClick={reset}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-500 hover:text-hanwha-orange hover:bg-orange-50 rounded-lg transition-all"
               >
                 <RefreshCcw className="w-4 h-4" />
                 <span>다시 시작</span>
               </button>
               <button 
                 onClick={downloadExcel}
-                className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95"
+                className="flex items-center gap-2 bg-hanwha-dark text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-gray-200 hover:bg-hanwha-orange transition-all active:scale-95"
               >
                 <Download className="w-4 h-4" />
-                <span>통합 리포트 생성 (Excel)</span>
+                <span>분석 리포트 다운로드</span>
               </button>
             </div>
           )}
@@ -161,11 +161,11 @@ export default function App() {
         ) : (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {/* Tabs */}
-            <div className="flex items-center gap-2 bg-white p-1 rounded-xl shadow-sm border border-gray-100 w-fit">
+            <div className="flex items-center gap-2 bg-white p-1.5 rounded-xl shadow-sm border border-gray-100 w-fit">
               <button 
                 onClick={() => setActiveTab("dashboard")}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                  activeTab === "dashboard" ? "bg-blue-600 text-white shadow-md shadow-blue-100" : "text-gray-500 hover:bg-gray-50"
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
+                  activeTab === "dashboard" ? "bg-hanwha-orange text-white shadow-lg shadow-orange-100" : "text-gray-500 hover:bg-gray-50"
                 }`}
               >
                 <LayoutDashboard className="w-4 h-4" />
@@ -173,12 +173,12 @@ export default function App() {
               </button>
               <button 
                 onClick={() => setActiveTab("data")}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                  activeTab === "data" ? "bg-blue-600 text-white shadow-md shadow-blue-100" : "text-gray-500 hover:bg-gray-50"
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
+                  activeTab === "data" ? "bg-hanwha-orange text-white shadow-lg shadow-orange-100" : "text-gray-500 hover:bg-gray-50"
                 }`}
               >
                 <Database className="w-4 h-4" />
-                데이터 정제 결과
+                정제 데이터
               </button>
             </div>
 
@@ -195,13 +195,13 @@ export default function App() {
         )}
       </main>
 
-      <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100 mt-20 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex items-center gap-2 text-gray-400">
-          <Sparkles className="w-4 h-4" />
-          <span className="text-sm font-medium">Powered by Gemini AI for LS SCM Analytics</span>
+      <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-200 mt-20 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex items-center gap-2 text-gray-500">
+          <Sparkles className="w-4 h-4 text-hanwha-orange" />
+          <span className="text-sm font-bold tracking-tight">DESIGNED BY HANWHA AEROSPACE STYLE ENGINE</span>
         </div>
-        <p className="text-gray-400 text-sm italic">
-          LS 부품 데이터 자동분석 및 보고서 생성기 v1.0
+        <p className="text-gray-400 text-xs font-medium">
+          LS Component Data Analytics v1.0 • AI-Enabled Precision Engineering
         </p>
       </footer>
     </div>

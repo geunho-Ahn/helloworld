@@ -83,8 +83,8 @@ export default function FileUpload({ onDataLoaded }: FileUploadProps) {
         onDrop={onDrop}
         className={`relative border-2 border-dashed rounded-2xl p-12 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
           isDragging
-            ? "border-blue-500 bg-blue-50"
-            : "border-gray-300 hover:border-blue-400 hover:bg-gray-50"
+            ? "border-hanwha-orange bg-orange-50"
+            : "border-gray-200 hover:border-hanwha-orange hover:bg-white"
         }`}
         onClick={() => document.getElementById("file-input")?.click()}
       >
@@ -96,25 +96,26 @@ export default function FileUpload({ onDataLoaded }: FileUploadProps) {
           onChange={onFileChange}
         />
         
-        <div className="p-4 bg-blue-100 rounded-full mb-6">
-          <Upload className="w-10 h-10 text-blue-600" />
+        <div className="p-4 bg-hanwha-gray rounded-full mb-6 border border-gray-100 shadow-sm">
+          <Upload className="w-10 h-10 text-hanwha-orange" />
         </div>
         
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          부품 데이터 파일 업로드
+        <h3 className="text-xl font-bold text-hanwha-dark mb-2">
+          부품 데이터 분석 시작
         </h3>
-        <p className="text-gray-500 text-center max-w-sm">
-          CSV 또는 Excel 파일을 이곳에 드래그하거나 클릭하여 선택하세요.
+        <p className="text-gray-500 text-center max-w-sm text-sm">
+          협력사에서 제공한 CSV 또는 Excel 파일을 업로드하세요. <br/>
+          정밀 분석 엔진이 데이터를 즉시 표준화합니다.
         </p>
         
-        <div className="mt-8 flex gap-4 text-sm text-gray-400">
-          <div className="flex items-center gap-1">
-            <FileType className="w-4 h-4" />
-            <span>CSV, XLSX 지원</span>
+        <div className="mt-8 flex gap-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+          <div className="flex items-center gap-1.5">
+            <FileType className="w-3 h-3 text-hanwha-orange" />
+            <span>XLSX / CSV</span>
           </div>
-          <div className="flex items-center gap-1">
-            <CheckCircle className="w-4 h-4" />
-            <span>자동 컬럼 매핑</span>
+          <div className="flex items-center gap-1.5">
+            <CheckCircle className="w-3 h-3 text-hanwha-orange" />
+            <span>AI Mapping</span>
           </div>
         </div>
       </div>
