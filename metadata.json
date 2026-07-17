@@ -1,0 +1,6 @@
+{
+  "name": "LS 부품 데이터 자동분석 및 보고서 생성기",
+  "description": "협력사별 상이한 부품 데이터를 표준화하고 AI 기반 인사이트 및 통계 보고서를 생성하는 도구",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
